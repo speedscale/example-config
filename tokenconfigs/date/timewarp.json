@@ -1,0 +1,36 @@
+{
+    "name": "http_standard_ex_time",
+    "in": [
+        {
+            "type": "http_cookie",
+            "config": {
+                "prefix": "set-cookie"
+            }
+        }
+    ],
+    "generator": [
+        {
+            "extractor": {
+                "type": "http_queryparam",
+                "config": {
+                    "name": "filter"
+                }
+            },
+            "transforms": [
+                {
+                    "type": "regex",
+                    "config": {
+                        "pattern": "\\d{4}(-\\d{2}){0,2}$"
+                    }
+                },
+                {
+                    "type": "date",
+                    "config": {
+                        "layout": "2006-01-02",
+                        "precision": "24h"
+                    }
+                }
+            ]
+        }
+    ]
+}
