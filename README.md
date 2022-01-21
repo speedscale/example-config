@@ -1,2 +1,2 @@
 # example-config
-Example configuration files used at docs.speedscale.com.
+Example configuration files used in the Speedscale [docs](docs.speedscale.com).
