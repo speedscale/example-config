@@ -1,0 +1,25 @@
+{
+    "id": "rotate_login",
+    "generator": [
+        {
+            "extractor": {
+                "type": "http_req_body"
+            },
+            "transforms": [
+                {
+                    "type": "json_path",
+                    "config": {
+                        "path": "username"
+                    }
+                },
+                {
+                    "type": "one_of",
+                    "config": {
+                        "options": "Dia,Ken,Josh",
+                        "strategy": "sequential"
+                    }
+                }
+            ]
+        }
+    ]
+}
